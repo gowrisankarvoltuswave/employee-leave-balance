@@ -7,5 +7,10 @@ express()
   .set('views', path.join(__dirname, 'views'))
   .set('view engine', 'ejs')
   .get('/', (req, res) => res.render('pages/index'))
-  .get('/test',(req,res)=> res.send('You are awesome Man !'))
-  .listen(PORT, () => console.log(`Listening on ${ PORT }`))
+  .get('/test', (req, res) => {
+    function callFirstFn() {
+      console.log(req)
+      res.send('You are awesome Man !')
+    }
+  })
+  .listen(PORT, () => console.log(`Listening on ${PORT}`))
