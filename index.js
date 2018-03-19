@@ -11,10 +11,11 @@ app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'ejs')
 app.get('/', (req, res) => res.render('pages/index'))
 app.post('/test', (req, res) => {
-  var obj =req.body.parameters
+  var obj = req.body.parameters
   var leaveId = obj.LeaveBalance;
   if (leaveId == '4 leaves For this Month') {
-    res.send('You are awesome Man !')
+    res.setHeader('Content-Type', 'application/json'); //Requires application/json MIME type
+    res.send(JSON.stringify({ "speech": 'You are awesome Man !', "displayText": 'You are awesome Man !' }))
   }
   else {
     res.send('You Better Try Again !')
