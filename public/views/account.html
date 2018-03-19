@@ -1,0 +1,77 @@
+<!-- <div class="g-recaptcha" data-sitekey="AIzaSyDUZzRbv8DRWe1eVAe_C_eLCjG2A-s-9xg"></div>
+<a href="javascript:void(0)" id="render-link">
+
+
+  Render the Save to Drive button</a>
+<div id="savetodrive-div"></div>
+<script>
+  // Client ID and API key from the Developer Console 
+  // var CLIENT_ID = '980818055652-40mtbld2vgtvmm07554lffh305c3qlrn.apps.googleusercontent.com';
+  // var API_KEY = 'AIzaSyDUZzRbv8DRWe1eVAe_C_eLCjG2A-s-9xg';
+  function renderSaveToDrive() {
+    gapi.savetodrive.render('savetodrive-div', {
+      src: '//localhost:3000/path/to/myfile.pdf',
+      filename: 'My Statement.pdf',
+      sitename: 'My Company Name'
+    });
+  }
+  document.getElementById('render-link').addEventListener('click', renderSaveToDrive);
+</script> -->
+
+
+
+<button id="authorize-button" onclick='handleAuthClick()'>Authorize</button>
+<h4>Test</h4>
+<img src="" alt="">
+<script type="text/javascript">
+    var clientId = '980818055652-40mtbld2vgtvmm07554lffh305c3qlrn.apps.googleusercontent.com';
+    var apiKey = 'AIzaSyDUZzRbv8DRWe1eVAe_C_eLCjG2A-s-9xg';
+    var scopes = 'https://www.googleapis.com/auth/plus.me';
+
+    function handleClientLoad() {
+        gapi.client.setApiKey(apiKey);
+        window.setTimeout(checkAuth,1);
+    }
+
+    function checkAuth() {
+        gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: true}, handleAuthResult);
+    }
+
+    function handleAuthResult(authResult) {
+        var authorizeButton = document.getElementById('authorize-button');
+        if (authResult && !authResult.error) {
+            authorizeButton.style.visibility = 'hidden';
+            makeApiCall();
+        } else {
+            authorizeButton.style.visibility = '';
+            authorizeButton.onclick = handleAuthClick;
+        }
+    }
+
+    function handleAuthClick(event) {
+        // Step 3: get authorization to use private data
+        gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: false}, handleAuthResult);
+        return false;
+    }
+
+    // Load the API and make an API call.  Display the results on the screen.
+    function makeApiCall() {
+        // Step 4: Load the Google+ API
+        gapi.client.load('plus', 'v1', function() {
+            // Step 5: Assemble the API request
+            var request = gapi.client.plus.people.get({
+            'userId': 'me'
+            });
+            // Step 6: Execute the API request
+            request.execute(function(resp) {
+            var heading = document.createElement('h4');
+            var image = document.createElement('img');
+            image.src = resp.image.url;
+            heading.appendChild(image);
+            heading.appendChild(document.createTextNode(resp.displayName));
+
+            document.getElementById('content').appendChild(heading);
+            });
+        });
+    }
+</script>

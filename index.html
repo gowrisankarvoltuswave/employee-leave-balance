@@ -1,0 +1,145 @@
+<!doctype html>
+<html ng-app="authApp" class="no-js {{containerClass}}">
+<!-- <meta name="google-signin-scope" content="profile email"> -->
+<!-- <meta name="google-signin-client_id" content="980818055652-40mtbld2vgtvmm07554lffh305c3qlrn.apps.googleusercontent.com"> -->
+
+<head>
+    <!--<base href="/">-->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-110864923-1"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--<title>Welcome</title>-->
+    <title update-title></title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="google-site-verification" content="pCLoCF-lKLRCqjuzerATpRUnDSVsDRBKyDeS7WEX6X0" />
+    <!--<script src="bower_components/angularjs-social-login/angularjs-social-login.js"></script>-->
+    <!--Bower components end-->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="stylesheets/google-drive.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-resource/1.6.8/angular-resource.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.min.js"></script>
+    <!-- <script src="https://static.zinoui.com/1.5/compiled/zino.upload.min.js"></script> -->
+    <!-- <script src="https://apis.google.com/js/client:platform.js?onload=start" async defer></script> -->
+    <!-- <script src="https://apis.google.com/js/client:platform.js" async defer></script> -->
+    <script src="library/oauth.js"></script>
+    <!-- <script src="scripts/google-drive.js"></script> -->
+    <!-- <script src="node_modules/oauth-js/lib/oauth.js"></script> -->
+    <!-- <script src="http://platform.twitter.com/anywhere.js?id=BpzRvcHvFLIUB1jzm3wedTngM&v=1"></script> -->
+    <!-- <script src="https://apis.google.com/js/client.js?onload=initClient"></script> -->
+    <script>
+        window.___gcfg = {
+            parsetags: 'explicit'
+        };
+    </script>
+    <!-- <script src="https://apis.google.com/js/platform.js" async defer></script> -->
+    <link rel="canonical" href="http://localhost:3000">
+    <!-- <script src="https://apis.google.com/js/platform.js" async defer>
+      {parsetags: 'explicit'}
+    </script> -->
+    <!-- <script type="text/javascript" src="https://www.google.com/jsapi"></script> -->
+
+    <script type="text/javascript" src="https://platform.linkedin.com/in.js">
+        api_key: 81bw7893w709yl
+        onLoad: onLinkedInLoad
+        authorize: false
+        scope: r_emailaddress
+    </script>
+    <script>
+            (function () {
+                var p = document.createElement('script')
+                p.type = 'text/javascript';
+                p.async = true;
+                p.src = 'https://apis.google.com/js/client.js?onload=handleClientLoad';
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(p, s);
+            })()
+        function onLoadFunction() {
+            gapi.client.setApiKey('AIzaSyDUZzRbv8DRWe1eVAe_C_eLCjG2A-s-9xg');
+            gapi.client.load('plus', 'v1', function () { })
+        }
+        window.fbAsyncInit = function () {
+            FB.init({
+                appId: '164737084306973',
+                // autoLogAppEvents: true,
+                xfbml: true,
+                version: 'v2.12',
+                status: true
+            });
+            FB.getLoginStatus(function (response) {
+                if (response.status == 'connected') {               // we are connected
+
+                } else if (response.status == 'not_authorized') {       // not auth
+                } else {                                            // we are not logged in to facebook
+
+                }
+
+            })
+        };
+
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) { return; }
+            js = d.createElement(s); js.id = id;
+            js.src = "https://connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+
+        function onLinkedInLoad() {
+            IN.Event.on(IN, "auth", getProfileData);
+            $('a[id*=li_ui_li_gen_]').css({ marginBottom: '20px' })
+                .html('<img src="/linkedin_signin_large.png" height="31" width="200" border="0" />');
+        }
+        function getProfileData() {
+            IN.API.Profile("me").fields("id", "first-name", "last-name", "email-address"
+                , "public-profile-url", "picture-url", "picture-urls::(original)", "headline", "summary", "location", "industry", "positions").result(onSuccess);
+        }
+        // window.twttr = (function (d, s, id) {
+        //     var js, fjs = d.getElementsByTagName(s)[0],
+        //         t = window.twttr || {};
+        //     if (d.getElementById(id)) return;
+        //     js = d.createElement(s);
+        //     js.id = id;
+        //     js.src = "https://platform.twitter.com/widgets.js";
+        //     fjs.parentNode.insertBefore(js, fjs);
+
+        //     t._e = [];
+        //     t.ready = function (f) {
+        //         t._e.push(f);
+        //     };
+
+        //     return t;
+        // }(document, "script", "twitter-wjs"));
+
+    </script>
+
+    <!-- <script src="../nodePopupTools.min.js" ></script> -->
+
+</head>
+
+<body>
+
+    <div id="wrap" ui-view></div>
+
+</body>
+
+<script src="public/scripts/app.js"></script>
+<script src="build/script.js"></script>
+<!-- <script src="scripts/config.js"></script>
+<script src="scripts/controllers/loginCtrl.js"></script>
+<script src="scripts/controllers/propertyCtrl.js"></script>
+<script src="scripts/controllers/vehiclesCtrl.js"></script>
+<script src="scripts/services/loginSvc.js"></script>
+<script src="scripts/services/socialauthSvc.js"></script>
+<script src="scripts/services/googleLoginSvc.js"></script>
+<script src="scripts/services/vehiclesSvc.js"></script>
+<script src="scripts/services/propertiesSvc.js"></script> -->
+
+</html>

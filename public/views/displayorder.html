@@ -1,0 +1,61 @@
+<style>
+    body{
+        font-size: 48px;
+    }
+    .yoverflow{
+        max-height: 619px;
+        overflow-y: scroll;
+    }
+</style>
+<div class="fulcontainer">
+    <div class="header">
+        <div id="topdiv">
+            <div class="col-sm-2 col-xs-5" style="margin-top: 10px">
+                <div class="logo">
+                    <a ui-sref="home">
+                        <span ng-if="containerClass=='en'"><img class="img-responsive" src="images/logo.png" alt=""></span>
+                        <span ng-if="containerClass=='rtl'"><img class="img-responsive" src="images/logo2.png" alt=""></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div style="margin-top: 60px">
+    <div class="col-md-12 col-lg-12 col-sm-12">
+        <!--<div class="col-md-4 col-lg-4 col-sm-12 yoverflow">-->
+        <div class="col-md-4 col-lg-4 col-sm-12">
+            <div class="alert alert-success alert-dismissable contactpage" ng-repeat="data in dataArray">
+                <strong style="font-size:90px;">{{data.orderId}}</strong>
+            </div>
+        </div>
+        <!--<div class="col-md-2 col-lg-2 col-sm-12"></div>-->
+        <div class="col-md-8 col-lg-8 col-sm-12" ng-if="dataArrays[0]">
+            <!--<div class="col-md-12">
+                <div class="col-md-3"></div>
+                <div class="col-md-7">
+                    <h1 style="font-size: larger">Order Number</h1>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
+                    <strong style="font-size:250px;color:#58750e">{{dataArray[0].orderId}}</strong>
+                </div>
+            </div>-->
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <h1 style="font-size: larger">Order Number</h1>
+                <strong style="font-size:250px;color:#58750e">{{dataArrays[0].orderId}}</strong>
+            </div>
+        </div>
+        <!--<div class="col-md-4 col-lg-4 col-sm-6"></div>
+        <div class="col-md-4 col-lg-4 col-sm-12 yoverflow">
+            <div class="alert alert-success alert-dismissable" ng-repeat="data in dataArray">
+                <strong>Order #{{data.orderId}}</strong>
+            </div>
+        </div>
+        <div class="col-md-4 col-lg-4 col-sm-6"></div>-->
+    </div>
+</div>
+</div>

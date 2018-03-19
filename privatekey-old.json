@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "careful-shadow-194312",
+  "private_key_id": "e6f52e2e79fd1859ea38bb0c0792e823e5488b2e",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQC4vgWgCW/bmflQ\n9VlxbG3ZzVzb8X6GJrJNIUia7ZK+CAJx2Ygq5pvtN55Xp7ZluclMfNB+iubV3f/7\nld24T9/yvlGKe2cS7rjZr5h/9zHotV32J1WHB8F+1Uca1n3u2b8j76g0OFdWuYF0\nzGGbHdR7jog7gUCoZswRXKSsDA51wK5KYkX1+KWCFMMF81Ct2OiVHcaBwZOZppFh\nZt1oPBMBnWGLzjjz+ZS7nX2De4CfvUCsJhBE3uWs31QTBwTHmG2joTi2/hYGrqgF\nzpyYsHYfTKO4YoDLsOTQp1uEft5Es0UF4igctKqHNkRAcXWnNqUR12jbCB2A8ne4\ngMkaKR+NAgMBAAECggEACjoavZ1IH/QKJT0v0mOaQTBpL5PS2UJTJInvJwR31yVC\nXWMZcqaJgzxM+7VBF6iNSDqwoBC4bqZ3gUnumEFzuFBo2y2xqw6kFQjvfEYG8Ub5\nCKNszKjVQVw1L3soRYywVCD0Qs/LpfVnATw/OwMPvDdLu1+QYMIwEdX7F7sjIcmM\nl0Pzqpcs+j53wAar3q9J2DTiJ0zrnwsKitxdb0L2+deYo1sbvkhLl9vjslS/NT4x\nMs9BsHlbf+tNKyKlVO8P+VasbFzSTOzt+uoRq0z/5qMu4x/hIqy/azymvi7o4NON\nXpDNNonqkSuI7t4PWS8ShbnW2GbcWD635ADVYlpRgQKBgQD2wJ3bGp+eVQer6/CS\nFqaiR8Y51Gjm0JYI379mUpdKRU/N8yJadrtlue1uorlGFk/AiTzQiiGv7Fv2fwv/\n3pfd+JVuW3EMYEfW89XMBJV5w9JpmgKJx3ajdRDrY1IOpP0okkCBpI/8exvNjx0l\n30sHW59Ym3cNSezL7ICYzQmWiQKBgQC/qnhJFvvqkZIrz+P8lvk5EnERUj7Iuwvn\nxcDYxORqIAmpZ0uviai90FSkB/XFi5ZBH8Y2/6zXZAUfl/H0SYDrpzCkCizik4uW\nF1TJbPd6jF8GBZ+8IOJT/L85dJqsFD/53isfCUfiC6w88cDSO8EEZOfdSQrxOwot\ncIA7Xcv/5QKBgGRv+tEYgSg9jCXan82XErSzamhXoWtyM9/g01OfAp3koJtAABe6\nhITfrVl/OtLgeg3wzqRD1Xp6RuSKyiOYQ1DCwnBtIBLdjeBc2AV3SDCMGLWLTsUu\nP4hBOmXVw6zaU4GUJlWe2kz2/1YojsC/pxaToMS8YzUxhgVrety3eNOhAoGAal2e\nV2GL+EdFCU9bxMe8E3IqkWRFN3ymRL+4IBRUdpjFA+AxXn9Ux9IfxtAsEq8+eXG6\nvLbzIq19MmVOfzVzeFPWaJLFChC7vFXCVe5FARt5eIwSc4MEV3vCW45cb/bk8jPb\nVmP+InI76a54RbOnkFq3WlS439rV8RWn9Eo/dgkCgYBLLdBwcIeXvabOaQB63zVB\nNOxyu+sq76GjvoeEc+GxXM6K7axxuEP/qFrz0cZMnhxSe8UidoW79wC7BEaUyJ6E\nEcjC64tce1wiTHXhk8Iup7zOT8wzDC+78fs6hK3KHy1MkDDaf+xYYI3ynWYMUq7p\nrSXwXGQc6siFN9a5MY2DcQ==\n-----END PRIVATE KEY-----\n",
+  "client_email": "voltuswave-test-google-drive@careful-shadow-194312.iam.gserviceaccount.com",
+  "client_id": "115582718675211890517",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/voltuswave-test-google-drive%40careful-shadow-194312.iam.gserviceaccount.com"
+}

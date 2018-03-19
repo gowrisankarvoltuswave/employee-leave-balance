@@ -1,0 +1,40 @@
+<div class="col-md-2">
+    <button type="submit" class="btn btn-primary" onclick="uploadFile()">Download from OneDrive</button>
+</div>
+
+
+<script>
+    function uploadFile() {
+        
+        WL.init({
+            client_id: '980818055652-40mtbld2vgtvmm07554lffh305c3qlrn.apps.googleusercontent.com',
+            redirect_uri: 'http://localhost:3000',
+            scope: "wl.signin",
+            response_type: "token"
+        });
+        WL.login({
+            scope: "wl.skydrive_update"
+        }).then(
+            function (response) {
+                WL.upload({
+                    path: "folder.a6b2a7e8f2515e5e.A6B2A7E8F2515E5E!170",
+                    element: "file",
+                    overwrite: "rename"
+                }).then(
+                    function (response) {
+                        document.getElementById("info").innerText =
+                            "File uploaded.";
+                    },
+                    function (responseFailed) {
+                        document.getElementById("info").innerText =
+                            "Error uploading file: " + responseFailed.error.message;
+                    }
+                    );
+            },
+            function (responseFailed) {
+                document.getElementById("info").innerText =
+                    "Error signing in: " + responseFailed.error.message;
+            }
+            );
+    }
+</script>
