@@ -1,3 +1,5 @@
+import { read } from 'fs';
+
 const express = require('express')
 const path = require('path')
 const PORT = process.env.PORT || 5000
@@ -7,10 +9,15 @@ express()
   .set('views', path.join(__dirname, 'views'))
   .set('view engine', 'ejs')
   .get('/', (req, res) => res.render('pages/index'))
-  .get('/test', (req, res) => {
-    function callFirstFn() {
+  .post('/test', (req, res) => {
       console.log(req)
-      res.send('You are awesome Man !')
-    }
+      var leaveId = req.body.parameters.LeaveBalance;
+      if(leaveId = '4 leaves For this Month'){
+        res.send('You are awesome Man !')
+      }
+      else{
+        res.send('You Better Try Again !')
+
+      }
   })
   .listen(PORT, () => console.log(`Listening on ${PORT}`))
