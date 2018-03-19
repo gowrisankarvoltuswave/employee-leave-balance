@@ -8,11 +8,15 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "node test.js"
+    "test": "node test.js",
+    "debug": "node --inspect=8426 index.js"
+
   },
   "dependencies": {
     "ejs": "^2.5.6",
-    "express": "^4.15.2"
+    "express": "^4.15.2",
+    "nodemon": "^1.17.2",
+    "body-parser": "^1.18.2"
   },
   "devDependencies": {
     "request": "^2.81.0",

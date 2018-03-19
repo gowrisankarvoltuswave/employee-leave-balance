@@ -1,23 +1,24 @@
-import { read } from 'fs';
 
 const express = require('express')
 const path = require('path')
 const PORT = process.env.PORT || 5000
+var bodyParser = require('body-parser');
 
-express()
-  .use(express.static(path.join(__dirname, 'public')))
-  .set('views', path.join(__dirname, 'views'))
-  .set('view engine', 'ejs')
-  .get('/', (req, res) => res.render('pages/index'))
-  .post('/test', (req, res) => {
-      console.log(req)
-      var leaveId = req.body.parameters.LeaveBalance;
-      if(leaveId = '4 leaves For this Month'){
-        res.send('You are awesome Man !')
-      }
-      else{
-        res.send('You Better Try Again !')
+var app = express();
+app.use(bodyParser());
+app.use(express.static(path.join(__dirname, 'public')))
+app.set('views', path.join(__dirname, 'views'))
+app.set('view engine', 'ejs')
+app.get('/', (req, res) => res.render('pages/index'))
+app.post('/test', (req, res) => {
+  var obj =req.body.parameters
+  var leaveId = obj.LeaveBalance;
+  if (leaveId == '4 leaves For this Month') {
+    res.send('You are awesome Man !')
+  }
+  else {
+    res.send('You Better Try Again !')
 
-      }
-  })
+  }
+})
   .listen(PORT, () => console.log(`Listening on ${PORT}`))
