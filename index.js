@@ -3,9 +3,12 @@ const express = require('express')
 const path = require('path')
 const PORT = process.env.PORT || 5000
 var bodyParser = require('body-parser');
-
+const http = require('https');
+const host = 'leave-balance.herokuapp.com';
 var app = express();
-app.use(bodyParser());
+app.use(bodyParser.urlencoded({
+  extended:true
+}));
 app.use(express.static(path.join(__dirname, 'public')))
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'ejs')
